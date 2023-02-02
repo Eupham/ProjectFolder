@@ -56,12 +56,14 @@ class SimonGame:
                 self.player_sequence = []
                 self.sequence.append(random.randint(0, 3))
                 self.display_sequence(self.sequence)
+                self.play_button.config(state='normal')
             else:
                 self.status_label.config(text="Wrong answer! Game Over")
                 self.play_button.config(state='normal')
                 self.sequence = []
                 self.player_sequence = []
                 self.round_number = 1
+
     def play_game( self ):
         self.play_button.config(state='disabled')
         self.status_label.config(text="Get ready for round 1")
