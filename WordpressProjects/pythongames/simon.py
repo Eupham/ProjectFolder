@@ -16,6 +16,8 @@ class SimonGame:
         self.player_sequence = []
         self.round_number = 1
 
+
+
         self.status_label = tk.Label(self.master, text="Start the game!", font=("Arial", 16), bg='white')
         self.status_label.pack(pady=20)
 
@@ -29,6 +31,7 @@ class SimonGame:
         for i in range(4):
             button = tk.Button(button_frame, bg=self.colors[i], height=100 // 5, width=100 // 5)
             button.grid(row=i // 2, column=i % 2)
+            button.bind('<Button-1>', lambda event, arg=i: self.click_button(arg))
             self.buttons.append(button)
 
     def display_sequence( self, sequence ):
